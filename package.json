@@ -36,5 +36,13 @@
     "typescript",
     "vue-simple-scroller",
     "vue3-simple-scroller"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/letconstvar/vue-simple-scroller/issues",
+    "email": "1985225667@qq.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/letconstvar/vue-simple-scroller"
+  }
 }
