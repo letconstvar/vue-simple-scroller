@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, onMounted, onUnmounted, ref } from "vue";
+import { defineProps, onBeforeUnmount, onMounted, ref } from "vue";
 
 interface IProps {
   height?: string,
@@ -55,7 +55,7 @@ onMounted(() => {
   ListRef.value.addEventListener('scroll', initScroll);
 });
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   ListRef.value.removeEventListener('scroll', initScroll);
 });
 </script>

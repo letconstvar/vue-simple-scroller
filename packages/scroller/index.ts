@@ -1,8 +1,9 @@
-// 导出的对象必须具有 install，才能被 Vue.use() 方法安装
-import Scroller from './index.vue'
+// @ts-ignore
+import Scroller from './index.vue';
+import { App } from 'vue';
 
-Scroller.install = function (Vue: any) {
+Scroller.install = function (Vue: App) {
   Vue.component('vue-simple-scroller', Scroller);
 }
 
-export default Scroller
+export default Scroller;

@@ -1,4 +1,4 @@
-import { defineComponent, ref, onMounted, onUnmounted, openBlock, createElementBlock, normalizeStyle, createElementVNode, renderSlot, createCommentVNode } from "vue";
+import { defineComponent, ref, onMounted, onBeforeUnmount, openBlock, createElementBlock, normalizeStyle, createElementVNode, renderSlot, createCommentVNode } from "vue";
 var index_vue_vue_type_style_index_0_lang = "";
 const _sfc_main = /* @__PURE__ */ defineComponent({
   props: {
@@ -28,7 +28,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       innerHeight.value = InnerRef.value.offsetHeight;
       ListRef.value.addEventListener("scroll", initScroll);
     });
-    onUnmounted(() => {
+    onBeforeUnmount(() => {
       ListRef.value.removeEventListener("scroll", initScroll);
     });
     return (_ctx, _cache) => {

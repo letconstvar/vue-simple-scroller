@@ -2,7 +2,7 @@
   "name": "vue-simple-scroller",
   "license": "MIT",
   "private": false,
-  "version": "1.0.8",
+  "version": "1.0.12",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -26,7 +26,8 @@
   "types": "scroller.d.ts",
   "files": [
     "dist/*",
-    "scroller.d.ts"
+    "scroller.d.ts",
+    "packages/scroller/types.ts"
   ],
   "keywords": [
     "vue",
