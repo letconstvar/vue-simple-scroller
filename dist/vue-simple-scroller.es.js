@@ -7,7 +7,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     isEnd: { type: Boolean, default: false },
     isTop: { type: Boolean, default: false }
   },
-  emits: ["onEnd"],
+  emits: ["onEnd", "onTop"],
   setup(__props, { emit }) {
     const props = __props;
     const ListRef = ref();
@@ -21,6 +21,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const scrollTop = e.target.scrollTop;
       if (scrollTop + listHeight.value >= innerHeight.value) {
         emit("onEnd");
+      }
+      if (scrollTop === 0) {
+        emit("onTop");
       }
     };
     onMounted(() => {

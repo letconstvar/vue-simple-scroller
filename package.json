@@ -2,7 +2,7 @@
   "name": "vue-simple-scroller",
   "license": "MIT",
   "private": false,
-  "version": "1.0.13",
+  "version": "1.0.14",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
