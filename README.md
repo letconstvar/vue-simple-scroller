@@ -23,6 +23,7 @@ npm i vue-simple-scroller -D
 | Events Name | Description                                     | Arguments       | Version |
 | :---------- | :---------------------------------------------- | :-------------- | :------ |
 | on-end      | triggered when the container reaches the bottom | (event) => void |         |
+| on-top      | triggered when the container reaches the top    | (event) => void |         |
 
 
 
@@ -50,16 +51,24 @@ demo.vue
 <script setup lang="ts">
 import { ref } from 'vue'
 
+const isTop = ref(false);
 const isEnd = ref(false);
 const loading = ref(false);
 
+const handleTop = () => {
+  console.log('top~~~')
+};
+  
 const handleEnd = () => {
   console.log('end~~~')
 };
 </script>
 
 <template>
-  <vue-simple-scroller height="100px" @on-end="handleEnd" :is-end="isEnd" :loading="loading">
+  <vue-simple-scroller height="100px" @on-end="handleEnd" @on-top="handleTop" :is-end="isEnd" :loading="loading">
+    <template v-slot:isTop>
+      <div style="text-align: center">top～</div>
+    </template>
     <template v-slot:isEnd>
       <div style="text-align: center">end～</div>
     </template>

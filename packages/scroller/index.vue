@@ -27,7 +27,8 @@ const props = withDefaults(defineProps<IProps>(), {
 });
 
 const emit = defineEmits<{
-  (e: 'onEnd'): void
+  (e: 'onEnd'): void,
+  (e: 'onTop'): void
 }>();
 
 const ListRef = ref();
@@ -46,6 +47,9 @@ const initScroll = (e: Event) => {
   const scrollTop = e.target.scrollTop; // 元素的内容垂直滚动的像素数
   if ((scrollTop + listHeight.value) >= innerHeight.value) {
     emit('onEnd');
+  }
+  if (scrollTop === 0) {
+    emit('onTop');
   }
 }
 
